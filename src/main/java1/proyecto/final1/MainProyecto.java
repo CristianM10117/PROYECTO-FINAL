@@ -112,17 +112,17 @@ public class MainProyecto {
     		  for(i = 0; i < biblioteca.size(); i++) {
     			   libro = biblioteca.get(i);
     		       resultado = libro.getCodigo().contains(lr);
-    		     if (resultado == true) {
-    		    	 if(libro.getEstado().equals("Disponible")) {
-    		    	   libro.setEstado("Reservado");
-    		    	   libro.setFecha(diaEntrega);
-    		    	   libro.setCedula(ce);
-     	             System.out.println("El libro ha sido correctamente reservado, pase a la biblioteca por el. ");
+    		  if (resultado == true) {
+            	 if(libro.getEstado().equals("Disponible")) {
+    		    libro.setEstado("Reservado");
+    		    libro.setFecha(diaEntrega);
+    		    libro.setCedula(ce);
+    System.out.println("El libro ha sido correctamente reservado, pase a la biblioteca por el. ");
     		    	 }
     		    	 
-    		    	 }else {
-    		    	 System.out.println("Libro no Disponible.");
-    		    	 System.out.println("EL libro estará disponible el: " +fechaD.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+    		    }else {
+    		System.out.println("Libro no Disponible.");
+System.out.println("EL libro estará disponible el: " +fechaD.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
     		     
     		     }     	 
     		     }
@@ -201,16 +201,16 @@ public class MainProyecto {
          		    op4 = LI.nextInt();
          		    if(op4 == 1) {
          		    	libro.setEstado("Prestado");
-         System.out.println("La fecha de entrega del libro es el: " +diaEntrega.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-         		    }else {
-         		    	 System.out.println("No se le presto el libro. ");
-         		    }
-         		    }else {
-         		    	 System.out.println("No esta Reservado. "); 	
-         		    }
-     		     }else {
-     		    	 System.out.println("Libro no existente. ");
-     		     }
+System.out.println("La fecha de entrega del libro es el: " +diaEntrega.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+             }else {
+           	 System.out.println("No se le presto el libro. ");
+             }
+             }else {
+           	 System.out.println("No esta Reservado. "); 	
+             }
+     		   }else {
+     	  	 System.out.println("Libro no existente. ");
+     		   }
     	   }
 	}else if(op2.equals("c")) {
 		System.out.println("Ingrese codigo del libro a reservar: ");
@@ -228,23 +228,23 @@ public class MainProyecto {
 		    	 System.out.println("1.- Aplazar. ");
       		    System.out.println("2.- No Aplazar. ");
       		    op5 = LI.nextInt();
-		      if(op5 == 1 && libro.getCedula().equals(ce) && libro.getEstado().equals("Prestado")) {
-		    	  System.out.println("La fecha de entrega del libro se aplazo hasta el: " +diaPlazo.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		      }else if(op5 == 2){
-		    	  System.out.println("No se le aplazó la fecha.");  
-		      }
+		  if(op5 == 1 && libro.getCedula().equals(ce) && libro.getEstado().equals("Prestado")) {
+System.out.println("La fecha de entrega del libro se aplazo hasta el: " +diaPlazo.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		    }else if(op5 == 2){
+		  	  System.out.println("No se le aplazó la fecha.");  
+		     }
 		     }else {
-		    	 System.out.println("El libro no es encontrado. ");
+		   System.out.println("El libro no es encontrado. ");
 		     }
 		     
 		  }
 		  }else {
-			  System.out.println("Opcion inexistente. ");
+	  System.out.println("Opcion inexistente. ");
 		  }
-    	   
-    	   }else {
-    		   System.out.println("Opcion inexistente. "); 
-    	   }
+   	   
+      }else {
+  	   System.out.println("Opcion inexistente. "); 
+       }
 	}while(op != 3);
 	System.out.println("Gracias por preferirnos.");
 	}
